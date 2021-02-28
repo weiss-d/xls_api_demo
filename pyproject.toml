@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "XLS API Demo"
+name = "xls-api-demo"
 version = "0.1.0"
 description = "in progress..."
 authors = ["Simon Weiss <wonder@simonweiss.space>"]
