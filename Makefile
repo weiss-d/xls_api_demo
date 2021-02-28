@@ -9,6 +9,7 @@ lint:
 	pre-commit run --all-files
 
 test:
+	poetry install
 	poetry run pytest
 
 freeze:
