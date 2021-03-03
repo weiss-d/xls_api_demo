@@ -8,16 +8,19 @@ import pyexcel
 
 
 def find_x_in_file(excel_file: Path) -> str:
-    """find_x_in_file.
+    """Finds a number that is present only in one column and returns it in
+    formatted string according to the requirements.
 
     Parameters
     ----------
     excel_file : Path
-        excel_file
+        Path to Excel file.
+        File existence should be checked on the calling side.
 
     Returns
     -------
     str
+        Formatted string with resulting number.
 
     """
     book = pyexcel.get_book(file_name=excel_file.absolute().as_posix())
