@@ -21,7 +21,8 @@ def find_x_in_file(excel_file: Path) -> str:
 
     """
     book = pyexcel.get_book(file_name=excel_file.absolute().as_posix())
-    for sheet in book:
+    # Filtering out empty sheets
+    for sheet in (sh for sh in book if sh):
 
         # Trimming the columns
         sheet.name_columns_by_row(0)
@@ -40,7 +41,7 @@ def find_x_in_file(excel_file: Path) -> str:
             if "" in after_column:
                 after_column = after_column[: after_column.index("")]
 
-            # Validity checks
+            # Validity checkup
             if abs(len(before_column) - len(after_column)) != 1:
                 raise ValueError(
                     "'before' and 'after' columns found, but have incorrect size."
